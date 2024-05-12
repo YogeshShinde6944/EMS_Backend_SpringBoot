@@ -48,9 +48,9 @@ public class EmployeeController {
 		return "employee added successfully..........";
 	}
 
-	@PutMapping("/")
-	public String updateEmployee(@RequestBody Employee employee) {
-		employeeService.updateEmployee(employee);
+	@PutMapping("/{id}")
+	public String updateEmployee(@RequestBody Employee employee, @PathVariable int id) {
+		employeeService.updateEmployee(employee, id);
 		return "employee updated successfully..........";
 	}
 
